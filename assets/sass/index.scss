@@ -1,0 +1,996 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+//_____________________________________________________________________________________________________________
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Poppins", sans-serif;
+}
+
+//_____________________________________________________________________________________________________________
+body {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+//STYLE FOR LG, XL, XXL  SIDEBAR_______________________________________________________________________________
+.sidebar {
+  position: absolute;
+  height: 100vh;
+  width: 300px;
+  background: #1f6599;
+  z-index: 0;
+
+  .offcanvasSidebar {
+    left: -300px;
+    height: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .offcanvas-header h5 {
+    color: #fff;
+    font-size: 10px;
+  }
+
+  .container-Account {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    width: 100%;
+    margin-top: 1rem;
+
+    .card {
+      background-color: transparent;
+      border: none;
+      align-items: center;
+
+      .card-body {
+        border: none;
+        border-radius: 10px;
+        display: inline;
+        justify-content: center;
+        align-items: center;
+
+        .img1 {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: #1f6599;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          object-fit: fill;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          .bi-person-circle {
+            color: #ffffff;
+            font-size: 80px;
+          }
+        }
+      }
+
+      .bi-bell-fill {
+        color: #fff;
+        font-size: 15px;
+      }
+
+      h5 {
+        letter-spacing: 2px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 0.5;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
+      }
+    }
+  }
+
+  // OFFCANVAS VARIABLE_____________________________________________________________
+  $offcanvas-padding: 0;
+  $link-gap: 15px;
+  $link-bg-color: #1f6599;
+  $link-hover-bg-color: #287fc2;
+
+  .offcanvas-body {
+    padding: $offcanvas-padding;
+    width: 100%;
+
+    .list-group {
+      display: flex;
+      flex-direction: column;
+      gap: $link-gap;
+    }
+
+    .list-group-item {
+      border-radius: 0;
+      background-color: $link-bg-color;
+      color: #ffffffc5;
+      font-size: 12px;
+      border: none;
+
+      &:hover {
+        background-color: $link-hover-bg-color;
+        color: #fff;
+      }
+    }
+
+    #dashboard {
+      background-color: #287fc2;
+      color: #fff;
+    }
+
+    .dashboard:hover {
+      background-color: $link-hover-bg-color;
+      color: #fff;
+    }
+  }
+
+  @media (min-width: 0) {
+    display: none;
+  }
+
+  @media (min-width: 991px) {
+    left: -300px;
+  }
+}
+
+//STYLE FOR SM, MD NAVBAR OFFCANVAS____________________________________________________________________________
+.smsidenav {
+  display: block;
+
+  #offcanvasNavbar {
+    opacity: 1;
+    background-color: #1f6599;
+    max-width: 300px;
+  }
+
+  .offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .offcanvas-header h5 {
+    color: #fff;
+    font-size: 10px;
+  }
+
+  .container-Account {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    width: 100%;
+
+    .card {
+      background-color: transparent;
+      border: none;
+      align-items: center;
+
+      .card-body {
+        border: none;
+        border-radius: 10px;
+        display: inline;
+        justify-content: center;
+        align-items: center;
+
+        .img2 {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: #1f6599;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          object-fit: fill;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          .bi-person-circle {
+            color: #ffffff;
+            font-size: 80px;
+          }
+        }
+      }
+
+      .bi-bell-fill {
+        color: #fff;
+        font-size: 15px;
+      }
+
+      h5 {
+        letter-spacing: 2px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 0.5;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 300;
+        color: #fff;
+      }
+    }
+  }
+
+  // OFFCANVAS VARIABLE_____________________________________________________________
+  $offcanvas-padding: 0;
+  $link-gap: 15px;
+  $link-bg-color: #1f6599;
+  $link-hover-bg-color: #287fc2;
+
+  .offcanvas-body {
+    padding: $offcanvas-padding;
+    width: 100%;
+
+    .list-group {
+      display: flex;
+      flex-direction: column;
+      gap: $link-gap;
+    }
+
+    .list-group-item {
+      border-radius: 0;
+      background-color: $link-bg-color;
+      color: #ffffffc5;
+      font-size: 12px;
+      border: none;
+    }
+
+    .active {
+      background-color: $link-hover-bg-color;
+      color: #fff;
+    }
+  }
+}
+
+//STYLE FOR LOGOUT MODAL_______________________________________________________________________________________
+.modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        text-align: center;
+
+        p {
+          color: #1f6599;
+          font-weight: 400;
+        }
+      }
+
+      .modal-footer {
+        border: none;
+
+        button {
+          background-color: #1f6599;
+          border: none;
+          border-radius: 0;
+          color: #fff;
+          letter-spacing: 1px;
+          font-weight: 500;
+          width: 100px;
+          margin: 0.5rem;
+
+          &:hover {
+            background-color: #287fc2;
+          }
+        }
+      }
+    }
+  }
+}
+
+//STYLE FOR MAIN CONTENT_______________________________________________________________________________________
+
+.main {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 100vh;
+  height: 100%;
+  background: #fff;
+
+  @media (min-width: 768px) {
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  @media (min-width: 0px) {
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  //STYLE FOR NAVBAR CONTENT____________________________________________________________________________________
+  .navbar {
+    background-color: #fff;
+    height: 80px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+
+    .navbtn {
+      background-color: #1f6599;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+
+      i {
+        color: #fff;
+        font-size: 28px;
+      }
+    }
+
+    #sidebar-close {
+      @media (min-width: 0px) {
+        display: none;
+      }
+    }
+
+    .user {
+      width: 150px;
+      height: auto;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+    }
+
+    .clock {
+      font-size: 12px;
+      font-weight: 400;
+      color: #1f6599;
+      position: relative;
+      margin-right: 10px;
+    }
+
+    .usericoncontainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1f6599;
+      border-radius: 100%;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+
+      .img3 {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: #1f6599;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: fill;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .bi-person-circle {
+          font-size: 40px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  //STYLE FOR DASHBOARD CONTENT_________________________________________________________________________________
+  #dashboardContent {
+    .component {
+      width: 90%;
+      display: flex;
+      height: 30vh;
+      justify-content: center;
+      align-items: center;
+
+      .container {
+        height: 20vh;
+        width: 100vw;
+        background-color: #fff;
+        background-image: linear-gradient(to left,
+            #1f649938,
+            #1f6499c0,
+            #1f6599);
+        border-radius: 10px;
+
+        #currentDate {
+          font-size: 12px;
+          position: relative;
+          top: 10px;
+          left: 5px;
+        }
+
+        .welcome {
+          font-size: 25px;
+          position: relative;
+          top: 20px;
+          left: 5px;
+        }
+
+        .always {
+          font-size: 14px;
+          position: relative;
+          top: 5px;
+          left: 5px;
+        }
+      }
+    }
+
+    .dashboard {
+      .list-unstyled {
+        border-bottom: 1px solid #1f649938;
+        border-radius: 0.25rem;
+      }
+
+      @media (min-width: 991px) {
+        height: auto;
+      }
+
+      @media (min-width: 1200px) {
+        height: auto;
+      }
+
+      .dash {
+        color: #1f6599;
+        font-size: 14px;
+      }
+
+      .announcement {
+        color: #1f6599;
+        font-size: 15px;
+      }
+
+      .daily {
+        color: #1f6599;
+        font-size: 14px;
+      }
+
+      .activities {
+        color: #1f6599;
+        font-size: 15px;
+      }
+    }
+
+    .calendar {
+      background-color: #fff;
+      border: 1px solid #1f649967;
+      border-radius: 0.25rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+      margin-bottom: 0px;
+
+      @media (min-width: 768px) {
+        padding: 0;
+      }
+
+      @media (min-width: 0) {
+        margin-bottom: 5rem;
+      }
+
+      .calendar-header {
+        background-color: #1f6599;
+        color: #fff;
+        padding: 1rem;
+
+        button {
+          background-color: #236ea8;
+          color: #ffffff;
+          font-weight: 900;
+          border: 1px solid #ffffff;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        h2 {
+          font-weight: 600;
+          font-size: 16px;
+        }
+      }
+
+      .calendar-body {
+        .row {
+          text-align: center;
+          font-size: 12px;
+          color: #1f6599;
+          width: 100%;
+          margin-left: 0;
+
+          .col {
+            padding: 10px;
+
+            @media (min-width: 991px) {
+              padding: 7px;
+            }
+          }
+
+          .empty {
+            background-color: transparent;
+          }
+
+          .today {
+            background-color: #1f6599;
+            color: #fff;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  //STYLE FOR STUDENTPROFILE CONTENT____________________________________________________________________________
+  #studentProfileContent {
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+
+    @media (min-width: 991px) {
+      height: auto;
+    }
+
+    @media (min-width: 1200px) {
+      height: auto;
+    }
+
+    //_________________________________________________________________________________________________________
+    .row {
+      height: auto;
+
+      //STYLE FOR NAVBAR STUDENTPROFILE________________________________________________________________________
+      .navbar {
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+        border-radius: none;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        height: 80px;
+
+        .navbar-toggler {
+          background-color: #fff;
+          width: 40px;
+          height: 40px;
+          border-radius: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+
+          i {
+            color: #1f6599;
+            font-size: 30px;
+            font-weight: bold;
+          }
+        }
+
+        h1 {
+          color: #1f6599;
+          letter-spacing: 2px;
+          position: absolute;
+          left: 3.5rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      #navbarToggleExternalContent {
+        background-color: #fff;
+
+        h1 {
+          color: #1f6599;
+          letter-spacing: 2px;
+        }
+
+        button {
+          height: 100px;
+          border: none;
+          background-color: #fff;
+          font-size: 15px;
+          letter-spacing: 1px;
+          font-weight: 500;
+          color: #1f6599;
+
+          &:active,
+          &:hover {
+            background-color: #287fc29f;
+            color: #fff;
+          }
+        }
+      }
+
+      //STYLE FOR USER PROFILE_________________________________________________________________________________
+      .userProfile {
+        height: auto;
+
+        .header {
+          background-color: #1f6599;
+          color: #fff;
+          padding: 0.5rem;
+          font-size: 20px;
+          letter-spacing: 1px;
+        }
+
+        .profile {
+          background-color: #288dda34;
+
+          .userPhoto {
+            .img {
+              width: 150px;
+              height: 150px;
+              border-radius: 100%;
+              border: 2px solid #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #1f6599;
+              object-fit: cover;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              position: relative;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -10%);
+
+              p {
+                color: #fff;
+                letter-spacing: 1px;
+              }
+            }
+
+            p {
+              color: #1f6599;
+              letter-spacing: 1px;
+              line-height: 0.5;
+            }
+
+            button {
+              background-color: #1f6599;
+              color: #fff;
+              border: none;
+              height: 30px;
+              letter-spacing: 1px;
+              position: relative;
+              top: 50%;
+              left: 50%;
+              transform: translate(-100%, -10%);
+
+              &:hover,
+              &:active {
+                background-color: #287fc2;
+              }
+
+              @media (min-width: 0) {
+                width: 50%;
+              }
+
+              @media (min-width: 576px) {
+                width: 40%;
+                transform: translate(-125%, -10%);
+              }
+
+              @media (min-width: 768px) {
+                width: 25%;
+                transform: translate(-200%, -10%);
+              }
+
+              @media (min-width: 992px) {
+                width: 100%;
+                transform: translate(-50%, -10%);
+              }
+            }
+
+            #staticBackdrop {
+              button {
+                border-radius: 0;
+                text-align: center;
+                height: 40px;
+                font-weight: 700;
+                letter-spacing: 1px;
+              }
+            }
+          }
+
+          .basicInfo {
+            @media (min-width: 0) {
+              margin-bottom: 4rem;
+            }
+
+            span {
+              border: 1px solid #1f649986;
+              height: 50px;
+              border-right: none;
+              background-color: #fff;
+              border-radius: 3px 0 0 3px;
+
+              i {
+                color: #1f6599;
+                font-size: 15px;
+              }
+            }
+
+            label {
+              color: #1f6599;
+              font-size: 15px;
+              letter-spacing: 1px;
+              line-height: 0.1;
+              margin-bottom: 1rem;
+            }
+
+            input {
+              border: 1px solid #1f649986;
+              border-left: none;
+              color: #1f6499a9;
+              background-color: #fff;
+              padding: 0.5rem;
+              width: 80%;
+              height: 50px;
+              font-weight: 500;
+              letter-spacing: 1px;
+              padding-left: 1rem;
+              border-radius: 0 3px 3px 0;
+              margin-bottom: 2rem;
+              font-size: 14px;
+
+              @media (min-width: 991px) {
+                width: 70%;
+              }
+            }
+          }
+        }
+      }
+
+      //STYLE FOR ACCOUNT SECURITY_____________________________________________________________________________
+      .SecurityAcc {
+        background-color: #288dda34;
+        height: auto;
+
+        @media (min-width: 1200px) {
+          height: calc(100vh - 146px);
+        }
+
+        .header {
+          background-color: #1f6599;
+          color: #fff;
+          padding: 0.5rem;
+          font-size: 20px;
+          letter-spacing: 1px;
+        }
+
+        .changePass {
+          @media (min-width: 0) {
+            margin-bottom: 4rem;
+          }
+
+          span {
+            border: 1px solid #1f649986;
+            height: 50px;
+            border-right: none;
+            background-color: #fff;
+            border-radius: 3px 0 0 3px;
+
+            i {
+              color: #1f6599;
+              font-size: 15px;
+            }
+          }
+
+          label {
+            color: #1f6599;
+            font-size: 15px;
+            letter-spacing: 1px;
+            line-height: 0.1;
+            margin-bottom: 1rem;
+          }
+
+          input {
+            border: 1px solid #1f649986;
+            border-left: none;
+            color: #1f6499a9;
+            background-color: #fff;
+            padding: 0.5rem;
+            width: 70%;
+            height: 50px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding-left: 1rem;
+            border-radius: 0 3px 3px 0;
+            margin-bottom: 2rem;
+            font-size: 14px;
+
+            @media (min-width: 991px) {
+              width: 70%;
+            }
+          }
+
+          button {
+            border: none;
+            height: 50px;
+            border-right: none;
+            background-color: transparent;
+            border-radius: 3px 0 0 3px;
+            margin-left: 0;
+
+            i {
+              color: #1f6599;
+              font-size: 18px;
+            }
+          }
+        }
+
+        .save,
+        .cancel {
+          border: none;
+          height: 40px;
+          width: 100px;
+          border-right: none;
+          background-color: #1f6599;
+          border-radius: 3px 0 0 3px;
+          color: #fff;
+          float: right;
+          margin-bottom: 5rem;
+
+          @media (min-width: 992px) {
+            margin-bottom: 2rem;
+          }
+
+          @media (min-width: 1200px) {
+            margin-bottom: 2rem;
+          }
+
+          i {
+            color: white;
+            font-size: 14px;
+          }
+
+          &:hover,
+          &:active {
+            background-color: #287fc2;
+          }
+        }
+      }
+
+      //STYLE FOR ADDITIONAL INFORMATION________________________________________________________________________
+      .studentAdditionalinformation {
+        background-color: #288dda34;
+        height: auto;
+
+        .header {
+          background-color: #1f6599;
+          color: #fff;
+          padding: 0.5rem;
+          font-size: 20px;
+          letter-spacing: 1px;
+        }
+
+        .additionalInformation {
+          @media (min-width: 0) {
+            margin-bottom: 4rem;
+          }
+
+          @media (min-width: 992px) {
+            margin-bottom: 0;
+          }
+
+          label {
+            color: #1f6599;
+            font-size: 15px;
+            letter-spacing: 1px;
+            line-height: 0.1;
+            margin-bottom: 1rem;
+          }
+
+          input {
+            border: 1px solid #1f649986;
+            color: #1f6499a9;
+            background-color: #fff;
+            padding: 0.5rem;
+            width: 50%;
+            height: 50px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding-left: 1rem;
+            border-radius: 0 3px 3px 0;
+            margin-bottom: 2rem;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  //STYLE FOR GRADES CONTENT____________________________________________________________________________________
+  #gradesContent {
+    height: 100vh;
+    display: none;
+  }
+
+  //STYLE FOR ENROLLMENT CONTENT________________________________________________________________________________
+  #enrollmentContent {
+    height: 100vh;
+    background-color: greenyellow;
+  }
+
+  //STYLE FOR PAYMENT CONTENT___________________________________________________________________________________
+  #paymentContent {
+    height: 100vh;
+    background-color: powderblue;
+  }
+
+  //STYLE FOR FOOTER____________________________________________________________________________________________
+  .footer {
+    background-color: #1f6599;
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    opacity: 1;
+  }
+
+  .footer1 {
+    background-color: #1f6599;
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    opacity: 1;
+
+    @media (min-width: 0) {
+      display: none;
+    }
+  }
+}
+
+//STYLE FOR LOADER_____________________________________________________________________________________________
+.loader {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1f6599;
+  z-index: 100;
+  display: none;
+
+  img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
