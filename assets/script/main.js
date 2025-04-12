@@ -1,3 +1,4 @@
+AOS.init();
 
 const toggle = document.getElementById("toggle-switch");
 toggle.addEventListener("change", () => {
